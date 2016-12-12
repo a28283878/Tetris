@@ -74,7 +74,7 @@ public class Shape {
 	return m;
 	}
 	
-	public Shape rotateLeft() 
+	public Shape rotate() 
 	{
 	 if (pieceShape == Tetrominoes.SquareShape)
 	     return this;
@@ -89,18 +89,5 @@ public class Shape {
 	 return result;
 	}
 	
-	public Shape rotateRight()
-	{
-	 if (pieceShape == Tetrominoes.SquareShape)
-	     return this;
 	
-	 Shape result = new Shape();
-	 result.pieceShape = pieceShape;
-	
-	 for (int i = 0; i < 4; ++i) {
-	     result.setX(i, -y(i));
-	     result.setY(i, x(i));
-	 }
-	 return result;
-	}
 }

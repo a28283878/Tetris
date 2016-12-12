@@ -57,7 +57,7 @@ public class MenuView extends JFrame{
 		Quit.setFont(Quit.getFont().deriveFont(24.0f));
 		Quit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				System.exit(0);
 			}
 		});
 		Quit.setBounds(20, 340, 240, 40);
