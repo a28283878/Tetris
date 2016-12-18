@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JWindow;
 import javax.swing.SwingConstants;
 
+import controller.GameController;
 import controller.MainController;
 
 
@@ -23,7 +24,7 @@ public class StopView extends JWindow {
 	public StopView() {
 		setSize(300,150);
 		setLocationRelativeTo(null);
-		Back = new JButton("Back");
+		Back = new JButton("Menu");
 		Back.setFont(Back.getFont().deriveFont(24.0f));
 		Back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -37,8 +38,8 @@ public class StopView extends JWindow {
 		Continue.setFont(Continue.getFont().deriveFont(24.0f));
 		Continue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MainController MC = new MainController();
-				MC.Game();
+				GameController GC = new GameController();
+				GC.Game();
 				
 			}
 		});

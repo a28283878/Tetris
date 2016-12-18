@@ -11,19 +11,27 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import controller.GameController;
 import controller.MainController;
+import model.GameSetting;
 
 public class GameView extends JFrame{
+	public GameSetting GS = new GameSetting();	;
 	public JButton Stop;
 	JLabel statusbar;
 	TetrisPanel GamePanel;
 	JPanel InfoPanel;
-	public final Board board;
+	public Board board;
 	public GameView(){
-		
-		statusbar = new JLabel("Score : 0");
+	}
+	 public JLabel getStatusBar() {
+	       return statusbar;
+	 }
+	 
+	 public void GamePrepare(){
+		 statusbar = new JLabel("Score : 0");
 
-        board = new Board(this);
+        board = new Board(this,GS);
         board.start();
 		setSize(300,600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,6 +43,7 @@ public class GameView extends JFrame{
 		setContentPane(GamePanel);
 		
 		InfoPanel = new JPanel();
+		InfoPanel.setPreferredSize(new Dimension(300,50));
 		
 		statusbar.setFont(statusbar.getFont().deriveFont(18.0f));
 		InfoPanel.add(statusbar, BorderLayout.WEST);
@@ -43,17 +52,13 @@ public class GameView extends JFrame{
 		Stop.setFont(Stop.getFont().deriveFont(18.0f));
 		Stop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MainController MC = new MainController();
-				MC.stop();
+				GameController GC = new GameController();
+				GC.stop();
 			}
 		});
 		
 		InfoPanel.add(Stop,BorderLayout.EAST);
 		
 		getContentPane().add(InfoPanel,BorderLayout.SOUTH);
-        
-	}
-	 public JLabel getStatusBar() {
-	       return statusbar;
-	   }
+	 }
 }

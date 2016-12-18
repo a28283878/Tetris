@@ -27,7 +27,7 @@ public class TetrisPanel extends JPanel{
 		}
 		
 		for(int i = 1 ; i < 22 ; i++){
-			g.drawLine(0, getHeight()/22*i, getWidth(), getHeight()/22*i);
+			g.drawLine(0, (getHeight()-50)/21*i, getWidth(), (getHeight()-50)/21*i);
 		}
 	}
 	

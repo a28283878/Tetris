@@ -7,20 +7,20 @@ import view.ResultView;
 import view.SettingView;
 //import view.tetris;
 import view.StopView;
+import model.GameSetting;
+import controller.GameController;
 
 public class MainController {
+	public static GameSetting gamesetting = new GameSetting();
 	static MenuView Menu = new MenuView();
 	static GameView Game = new GameView();
 	static SettingView Setting = new SettingView();
-	static ResultView result = new ResultView();
-	static StopView stop = new StopView();
+	static GameController GameController;
+
     public static void main(String[] args) {
         MainController MC = new MainController();
     	MC.Menu();
     }
-
-	private int getres;
-
     
     public MainController(){
     	
@@ -35,43 +35,15 @@ public class MainController {
     
     public void Start(){
     	AllInvisible();
-    	Game.board.clearBoard();
-    	Game.board.start();
-    	Game.board.continu();
-    	Game.Stop.setEnabled(true);
-    	Game.setLocationRelativeTo(null);
-    	Game.setVisible(true);
+    	GameController  = new GameController(Game);
+    	GameController.start(gamesetting);  	
     }
-    public void stop(){
-    	Game.board.pause();
-    	Game.Stop.setEnabled(false);
-    	stop.setLocationRelativeTo(null);
-    	stop.setVisible(true);
-    }
+
     public void Setting(){
     	AllInvisible();
-    	
+    	Setting.GS = gamesetting;
     	Setting.setLocationRelativeTo(null);
     	Setting.setVisible(true);
-    }
-    public void Result(int res){
-    	AllInvisible();
-    	
-    	result.setResult(res);
-    	result.setLocationRelativeTo(null);
-    	result.setVisible(true);
-    	getres=res;
-    }
-    public int getresult(){
-    	return getres;
-    }
-    public void Game(){
-    	AllInvisible();
-    	Game.board.continu();
-    	Game.Stop.setEnabled(true);
-    	Game.setLocationRelativeTo(null);
-    	Game.setVisible(true);
-    	
     }
     
     public void AllInvisible(){

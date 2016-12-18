@@ -11,8 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import controller.GameController;
 import controller.MainController;
-
+import model.GameSetting;
 import	model.Shape;
 import model.Shape.Tetrominoes;;
 
@@ -35,12 +36,12 @@ public class Board extends JPanel implements ActionListener {
 
 
 
-    public Board(GameView parent) {
+    public Board(GameView parent,GameSetting GS) {
 
        setFocusable(true);
        curPiece = new Shape();
        
-       timer = new Timer(400, this);
+       timer = new Timer(400 / GS.difficulty, this);
        timer.start(); 
        setOpaque(false);
        statusbar =  parent.getStatusBar();
@@ -187,8 +188,8 @@ public class Board extends JPanel implements ActionListener {
             
             timer.stop();
             isStarted = false;
-            MainController MC = new MainController();
-			MC.Result(numLinesRemoved);
+            GameController GC = new GameController();
+			GC.Result(numLinesRemoved);
            
         }
     }
