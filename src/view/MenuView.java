@@ -25,11 +25,14 @@ public class MenuView extends JFrame{
 		getContentPane().setLayout(null);
 		
 		Title = new JLabel("Tetris Game",SwingConstants.CENTER);
+		Title.setName("Title");
 		Title.setFont(Title.getFont().deriveFont(36.0f));
 		Title.setBounds(20, 5, 240, 100);
 		getContentPane().add(Title);
 		
 		Start = new JButton("Start");
+		Start.setName("Start");
+
 		Start.setFont(Start.getFont().deriveFont(24.0f));
 		Start.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
