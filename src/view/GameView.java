@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import controller.GameController;
 import controller.MainController;
@@ -19,6 +20,7 @@ public class GameView extends JFrame {
 	public GameSetting GS = new GameSetting();;
 	public JButton Stop;
 	JLabel statusbar;
+	JLabel Title;
 	TetrisPanel GamePanel;
 	JPanel InfoPanel;
 	public Board board;
@@ -43,11 +45,17 @@ public class GameView extends JFrame {
 		board.start();
 		setSize(300, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 		GamePanel = new TetrisPanel();
+		Title = new JLabel("Tetris Game",SwingConstants.CENTER);
+		Title.setName("GV_Title");
+		Title.setFont(Title.getFont().deriveFont(36.0f));
+		Title.setBounds(20, 5, 240, 100);
+		GamePanel.add(Title);
+		GamePanel.setName("GamePanel");
 		GamePanel.setBackground(Color.WHITE);
 		GamePanel.setLayout(new BorderLayout());
 		GamePanel.add(board, BorderLayout.CENTER);
+		
 		setContentPane(GamePanel);
 
 		InfoPanel = new JPanel();
@@ -68,6 +76,7 @@ public class GameView extends JFrame {
 		InfoPanel.add(Stop, BorderLayout.EAST);
 
 		 getContentPane().add(InfoPanel,BorderLayout.SOUTH);
+		 getContentPane().setName("GameViewPanel");
 	}
 	
 	@Override

@@ -22,6 +22,8 @@ public class GameController {
 		// TODO Auto-generated constructor stub
 	}
 	public void start(GameSetting gs){
+		System.out.println("3");
+
 		gamesetting = gs;
 		Game.GS.difficulty = gs.difficulty;
 		Game.GamePrepare();

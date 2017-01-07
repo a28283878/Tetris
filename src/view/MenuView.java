@@ -20,12 +20,13 @@ public class MenuView extends JFrame{
 	JButton Quit;
 	
 	public MenuView(){
+		System.out.println("1");
 		setSize(300,600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
 		Title = new JLabel("Tetris Game",SwingConstants.CENTER);
-		Title.setName("Title");
+		Title.setName("Tetris Game");
 		Title.setFont(Title.getFont().deriveFont(36.0f));
 		Title.setBounds(20, 5, 240, 100);
 		getContentPane().add(Title);
@@ -36,8 +37,10 @@ public class MenuView extends JFrame{
 		Start.setFont(Start.getFont().deriveFont(24.0f));
 		Start.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("2");
 				MainController MC = new MainController();
 				MC.Start();
+				
 			}
 		});
 		Start.setBounds(20, 140, 240, 40);

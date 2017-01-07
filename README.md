@@ -14,3 +14,13 @@ SE_Team5
     新增GameSetting Model 是遊戲設定的Model
     目前裡面只有Difficulty
     可以在另外加
+
+01/08 Xiaosean push
+
+    Unit Test use assertj
+    You should read below links.
+	http://joel-costigliola.github.io/assertj/assertj-swing-basics.html
+	http://joel-costigliola.github.io/assertj/assertj-swing-lookup.html
+
+	test case1: testMenu()
+	

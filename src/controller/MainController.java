@@ -34,6 +34,7 @@ public class MainController {
     }
     
     public void Start(){
+    	
     	AllInvisible();
     	GameController  = new GameController(Game);
     	GameController.start(gamesetting);  	
