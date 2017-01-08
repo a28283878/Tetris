@@ -12,7 +12,7 @@ import controller.GameController;
 
 public class MainController {
 	public static GameSetting gamesetting = new GameSetting();
-	static MenuView Menu = new MenuView();
+	public static MenuView Menu = new MenuView();
 	static GameView Game = new GameView();
 	static SettingView Setting = new SettingView();
 	static GameController GameController;

@@ -20,7 +20,6 @@ public class MenuView extends JFrame{
 	JButton Quit;
 	
 	public MenuView(){
-		System.out.println("1");
 		setSize(300,600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
@@ -36,8 +35,8 @@ public class MenuView extends JFrame{
 
 		Start.setFont(Start.getFont().deriveFont(24.0f));
 		Start.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("2");
 				MainController MC = new MainController();
 				MC.Start();
 				
