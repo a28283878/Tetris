@@ -22,6 +22,8 @@ public class GameController {
 		// TODO Auto-generated constructor stub
 	}
 	public void start(GameSetting gs){
+		stop.setVisible(false);
+		result.setVisible(false);
 		gamesetting = gs;
 		Game.GS.difficulty = gs.difficulty;
 		Game.GamePrepare();
@@ -34,6 +36,7 @@ public class GameController {
 	}
 	
     public void stop(){
+    	result.setVisible(false);
     	Game.board.pause();
     	Game.Stop.setEnabled(false);
     	stop.setLocationRelativeTo(null);
@@ -41,6 +44,8 @@ public class GameController {
     }
     
     public void Game(){
+    	stop.setVisible(false);
+		result.setVisible(false);
     	Game.board.continu();
     	Game.Stop.setEnabled(true);
     	Game.setLocationRelativeTo(null);
@@ -49,6 +54,7 @@ public class GameController {
     }
     
     public void Result(int res){
+    	stop.setVisible(false);
     	result.setResult(res);
     	result.setLocationRelativeTo(null);
     	result.setVisible(true);

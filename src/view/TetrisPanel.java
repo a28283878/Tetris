@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class TetrisPanel extends JPanel{
 	final int PanelWidth = 10;
-	final int PanelHeight = 22;
+	final int PanelHeight = 20;
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);		
@@ -26,8 +26,8 @@ public class TetrisPanel extends JPanel{
 			g.drawLine(getWidth()/10*i, 0, getWidth()/10*i, getHeight());
 		}
 		
-		for(int i = 1 ; i < 22 ; i++){
-			g.drawLine(0, (getHeight()-50)/21*i, getWidth(), (getHeight()-50)/21*i);
+		for(int i = 1 ; i < 20 ; i++){
+			g.drawLine(0, (getHeight()-50)/20*i, getWidth(), (getHeight()-50)/20*i);
 		}
 	}
 	

@@ -22,7 +22,7 @@ public class SettingView extends JFrame{
 	public GameSetting GS = new GameSetting();
 	
 	public SettingView(){
-		setSize(300,600);
+		setSize(300,650);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		

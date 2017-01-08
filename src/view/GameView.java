@@ -43,7 +43,7 @@ public class GameView extends JFrame {
 
 		board = new Board(this, GS);
 		board.start();
-		setSize(300, 600);
+		setSize(300, 650);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GamePanel = new TetrisPanel();
 		Title = new JLabel("Tetris Game",SwingConstants.CENTER);

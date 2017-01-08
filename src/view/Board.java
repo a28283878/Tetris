@@ -23,7 +23,7 @@ import model.Shape.Tetrominoes;
 public class Board extends JPanel implements ActionListener {
 
 	final int BoardWidth = 10;
-	final int BoardHeight = 22;
+	final int BoardHeight = 20;
 
 	Timer timer;
 	boolean isFallingFinished = false;
