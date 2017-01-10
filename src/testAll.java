@@ -73,9 +73,7 @@ public class testAll {
 		board.moveLeft();
 		if(board.mode != 1)
 		    fail("failed move left");
-		board.moveRight();
-		if(board.mode != 2)
-		    fail("failed move right");
+		
 	}
 
 }

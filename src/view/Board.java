@@ -350,7 +350,8 @@ public class Board extends JPanel implements ActionListener {
 				moveLeft();
 				break;
 			case KeyEvent.VK_RIGHT:
-				moveRight();
+				tryMove(curPiece, curX + 1, curY);
+				mode = 2;
 				break;
 			case KeyEvent.VK_DOWN:
 				tryMove(curPiece, curX, curY - 1);
@@ -384,9 +385,6 @@ public class Board extends JPanel implements ActionListener {
 		// for unit test left
 		mode = 1;
 	}
-	public void moveRight(){
-		tryMove(curPiece, curX + 1, curY);
-		mode = 2;
-	}
+	
 
 }
