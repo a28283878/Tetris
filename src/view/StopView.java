@@ -16,7 +16,7 @@ import controller.GameController;
 import controller.MainController;
 
 
-public class StopView extends JWindow {
+public class StopView extends JFrame {
 	JButton Back;
 	JButton Continue;
 	JPanel panel = new JPanel();
@@ -25,6 +25,7 @@ public class StopView extends JWindow {
 		setSize(300,150);
 		setLocationRelativeTo(null);
 		Back = new JButton("Menu");
+		Back.setName("Back");
 		Back.setFont(Back.getFont().deriveFont(24.0f));
 		Back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -35,6 +36,7 @@ public class StopView extends JWindow {
 		});
 		panel.add(Back);
 		Continue = new JButton("Continue");
+		Continue.setName("Continue");
 		Continue.setFont(Continue.getFont().deriveFont(24.0f));
 		Continue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JWindow;
@@ -11,7 +12,7 @@ import javax.swing.SwingConstants;
 
 import controller.MainController;
 
-public class ResultView extends JWindow {
+public class ResultView extends JFrame {
 	JButton Back;
 	JLabel Title;
 	JLabel result;
@@ -22,7 +23,7 @@ public class ResultView extends JWindow {
 	public ResultView() {
 		setSize(300,150);
 		setLocationRelativeTo(null);
-		
+		this.setVisible(false);
 		Title = new JLabel("GGGGGGGGGG",SwingConstants.CENTER);
 		Title.setFont(Title.getFont().deriveFont(36.0f));
 		Title.setBounds(20, 5, 240, 100);

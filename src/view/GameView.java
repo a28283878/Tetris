@@ -37,6 +37,9 @@ public class GameView extends JFrame {
 	public HoldView getHoldView() {
 		return holdView;
 	}
+	public Board getBoard(){
+		return board;
+	}
 
 	public void GamePrepare() {
 		statusbar = new JLabel("Score : 0");
@@ -46,7 +49,7 @@ public class GameView extends JFrame {
 		setSize(300, 650);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GamePanel = new TetrisPanel();
-		Title = new JLabel("Tetris Game",SwingConstants.CENTER);
+		Title = new JLabel("TT¤W¶³ºÝ",SwingConstants.CENTER);
 		Title.setName("GV_Title");
 		Title.setFont(Title.getFont().deriveFont(36.0f));
 		Title.setBounds(20, 5, 240, 100);
@@ -65,6 +68,7 @@ public class GameView extends JFrame {
 		InfoPanel.add(statusbar, BorderLayout.WEST);
 
 		Stop = new JButton("stop");
+		Stop.setName("stop");
 		Stop.setFont(Stop.getFont().deriveFont(18.0f));
 		Stop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

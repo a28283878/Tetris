@@ -48,6 +48,7 @@ public class MenuView extends JFrame{
 		
 		Setting = new JButton("Setting");
 		Setting.setFont(Setting.getFont().deriveFont(24.0f));
+		Setting.setName("Setting");
 		Setting.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainController MC = new MainController();

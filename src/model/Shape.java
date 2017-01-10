@@ -3,10 +3,9 @@ import java.util.Random;
 import java.lang.Math;
 
 public class Shape {
-
-	public enum Tetrominoes { NoShape, ZShape, SShape, LineShape, 
+	public static int shapeMode = 0;
+	static public enum Tetrominoes { NoShape, ZShape, SShape, LineShape, 
         TShape, SquareShape, LShape, MirroredLShape };
-
 	private Tetrominoes pieceShape;
 	private int coords[][];
 	private int[][][] coordsTable;
@@ -40,7 +39,9 @@ public class Shape {
 	 pieceShape = shape;
 	
 	}
-	
+	public int[][] getCoord(){
+		return coords;
+	}
 	private void setX(int index, int x) { coords[index][0] = x; }
 	private void setY(int index, int y) { coords[index][1] = y; }
 	public int x(int index) { return coords[index][0]; }
@@ -51,6 +52,7 @@ public class Shape {
 	{
 	 Random r = new Random();
 	 int x = Math.abs(r.nextInt()) % 7 + 1;
+	 shapeMode = x;
 	 Tetrominoes[] values = Tetrominoes.values(); 
 	 setShape(values[x]);
 	}

@@ -34,10 +34,12 @@ public class SettingView extends JFrame{
 		Difficulty = new JTextField();
 		Difficulty.setText(String.valueOf(GS.difficulty));
 		Difficulty.setBounds(20, 60, 240, 30);
+		Difficulty.setName("Difficulty");
 		getContentPane().add(Difficulty);
 		
 		Send = new JButton("Send");
 		Send.setFont(Send.getFont().deriveFont(24.0f));
+		Send.setName("Send");
 		Send.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GS.difficulty = Integer.valueOf(Difficulty.getText().toString());

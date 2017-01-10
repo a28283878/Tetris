@@ -6,7 +6,7 @@ import view.GameView;
 import view.ResultView;
 
 public class GameController {
-	static ResultView result = new ResultView();
+	public static ResultView result = new ResultView();
 	static StopView stop = new StopView();
 	public static GameView Game;
 	public GameSetting gamesetting;
