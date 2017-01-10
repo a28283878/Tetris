@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -82,11 +83,20 @@ public class GameView extends JFrame {
 		 getContentPane().add(InfoPanel,BorderLayout.SOUTH);
 		 getContentPane().setName("GameViewPanel");
 	}
-	
+//	
+//	public void setFocus() {
+//		for (Window window : Window.getWindows()) {
+//			if (this == window) {
+//				window.toFront();
+//				return;
+//			}
+//		}
+//	}
+//	
 	@Override
 	public void setVisible(boolean b) {
 		// TODO Auto-generated method stub
-		super.setVisible(b);
 		holdView.setVisible(b);
+		super.setVisible(b);
 	}
 }

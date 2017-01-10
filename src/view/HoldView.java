@@ -24,6 +24,7 @@ public class HoldView extends JFrame {
 		setUndecorated(true);
 		setLoc();
 		setVisible(true);
+//		parent.setFocus();
 	}
 	
 	private void setLoc() {
