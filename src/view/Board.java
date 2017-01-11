@@ -33,20 +33,24 @@ public class Board extends JPanel implements ActionListener {
 	int curX = 0;
 	int curY = 0;
 	JLabel statusbar;
-	Shape curPiece;
+	Shape curPiece, nextPiece;
 	Tetrominoes[] board;
+	GameController gameContr;
 	HoldView holdview;
+	NextView nextview;
 
 	public Board(GameView parent, GameSetting GS) {
 
 		setFocusable(true);
+		gameContr = new GameController();
 		curPiece = new Shape();
-
+		nextPiece = new Shape();
 		timer = new Timer(400 / GS.difficulty, this);
 		timer.start();
 		setOpaque(false);
 		statusbar = parent.getStatusBar();
 		holdview = parent.getHoldView();
+		nextview = parent.getNextView();
 		board = new Tetrominoes[BoardWidth * BoardHeight];
 		addKeyListener(new TAdapter());
 	}
@@ -54,6 +58,7 @@ public class Board extends JPanel implements ActionListener {
 	// This constructor is for HoldBoard
 	public Board() {
 		curPiece = new Shape();
+		nextPiece = new Shape();
 		setOpaque(false);
 	}
 
@@ -67,7 +72,7 @@ public class Board extends JPanel implements ActionListener {
 	}
 
 	int squareWidth() {
-		return (int) getSize().getWidth() / BoardWidth;
+		return (int) getSize().getWidth() / BoardWidth/3*2;
 	}
 
 	int squareHeight() {
@@ -86,7 +91,7 @@ public class Board extends JPanel implements ActionListener {
 		isFallingFinished = false;
 		numLinesRemoved = 0;
 		clearBoard();
-
+		curPiece.setShape(Tetrominoes.NoShape);
 		newPiece();
 		timer.start();
 	}
@@ -186,13 +191,15 @@ public class Board extends JPanel implements ActionListener {
 	}
 
 	private void newPiece() {
-		curPiece.setRandomShape();
+			nextPiece.setRandomShape();
+			curPiece.setShape(nextview.next(nextPiece));
+			nextview.next(nextPiece);
+			nextPiece.setRandomShape();
 		curX = BoardWidth / 2 + 1;
 		curY = BoardHeight - 1 + curPiece.minY();
 
 		if (!tryMove(curPiece, curX, curY)) {
 			curPiece.setShape(Tetrominoes.NoShape);
-
 			timer.stop();
 			isStarted = false;
 			GameController GC = new GameController();
@@ -311,6 +318,7 @@ public class Board extends JPanel implements ActionListener {
 			int keycode = e.getKeyCode();
 
 			if (keycode == 'p' || keycode == 'P') {
+				gameContr.stop();
 				pause();
 				return;
 			}

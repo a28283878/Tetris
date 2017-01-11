@@ -18,16 +18,16 @@ public class TetrisPanel extends JPanel{
 		// TODO Auto-generated method stub
 		g.setColor(new Color(230,230,230));
 		//g.drawLine(0, 0, 0, getHeight());//left
-		g.drawLine(0, 0, getWidth(), 0);//up
+		g.drawLine(0, 0, getWidth()/3*2, 0);//up
 		//g.drawLine(getWidth(), 0, getWidth(), getHeight());//right
-		g.drawLine(getWidth(), getHeight()-1, 0, getHeight()-1);//down
+		g.drawLine(getWidth()/3*2, getHeight()-1, 0, getHeight()-1);//down
 		
-		for(int i = 1; i < 10;i++){
-			g.drawLine(getWidth()/10*i, 0, getWidth()/10*i, getHeight());
+		for(int i = 0; i <= 10;i++){
+			g.drawLine(getWidth()/30*2*i, 0, getWidth()/30*2*i, getHeight());
 		}
 		
-		for(int i = 1 ; i < 20 ; i++){
-			g.drawLine(0, (getHeight()-50)/20*i, getWidth(), (getHeight()-50)/20*i);
+		for(int i = 0 ; i <= 20 ; i++){
+			g.drawLine(0, (getHeight()-50)/20*i, getWidth()/3*2, (getHeight()-50)/20*i);
 		}
 	}
 	

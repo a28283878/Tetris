@@ -20,17 +20,17 @@ public class ResultView extends JWindow {
 	JPanel panel = new JPanel();
 	MainController MC = new MainController();
 	public ResultView() {
-		setSize(300,150);
-		setLocationRelativeTo(null);
+		setSize(300,120);
+		setLocation(200,300);
 		
 		Title = new JLabel("GGGGGGGGGG",SwingConstants.CENTER);
 		Title.setFont(Title.getFont().deriveFont(36.0f));
-		Title.setBounds(20, 5, 240, 100);
+		Title.setBounds(20, 5, 200, 80);
 		panel.add(Title);
 				
 		result = new JLabel("",SwingConstants.CENTER);
 		result.setFont(result.getFont().deriveFont(36.0f));
-		result.setBounds(20, 5, 240, 100);
+		result.setBounds(20, 5, 200, 80);
 		panel.add(result);
 		
 		Back = new JButton("Back");

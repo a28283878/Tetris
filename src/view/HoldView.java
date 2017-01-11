@@ -23,7 +23,7 @@ public class HoldView extends JFrame {
 //		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setUndecorated(true);
 		setLoc();
-		setVisible(true);
+		//setVisible(true);
 	}
 	
 	private void setLoc() {
@@ -33,7 +33,7 @@ public class HoldView extends JFrame {
 
         int dx = centerPoint.x - windowSize.width / 2;
         int dy = centerPoint.y - windowSize.height / 2;    
-        setLocation(dx+200, dy);
+        setLocation(dx+145, dy+130);
 	}
 	
 	public Tetrominoes hold(Shape shape) {

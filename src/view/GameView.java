@@ -21,21 +21,27 @@ public class GameView extends JFrame {
 	public JButton Stop;
 	JLabel statusbar;
 	JLabel Title;
+	JLabel Hold;
+	JLabel Next;
 	TetrisPanel GamePanel;
 	JPanel InfoPanel;
 	public Board board;
 	HoldView holdView;
+	NextView nextView;
 
 	public GameView() {
 		holdView = new HoldView(this);
+		nextView = new NextView(this);
 	}
 
 	public JLabel getStatusBar() {
 		return statusbar;
 	}
-	
 	public HoldView getHoldView() {
 		return holdView;
+	}
+	public NextView getNextView(){
+		return nextView;
 	}
 
 	public void GamePrepare() {
@@ -43,7 +49,7 @@ public class GameView extends JFrame {
 
 		board = new Board(this, GS);
 		board.start();
-		setSize(300, 650);
+		setSize(450, 650);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GamePanel = new TetrisPanel();
 		Title = new JLabel("Tetris Game",SwingConstants.CENTER);
@@ -51,15 +57,25 @@ public class GameView extends JFrame {
 		Title.setFont(Title.getFont().deriveFont(36.0f));
 		Title.setBounds(20, 5, 240, 100);
 		GamePanel.add(Title);
+		Hold = new JLabel("HOLD");
+		Hold.setFont(Hold.getFont().deriveFont(28.0f));
+		Hold.setBounds(320, 300, 200, 100);
+		GamePanel.add(Hold);
+		Next = new JLabel("NEXT");
+		Next.setFont(Next.getFont().deriveFont(28.0f));
+		Next.setBounds(320, 80, 200, 100);
+		GamePanel.add(Next);
 		GamePanel.setName("GamePanel");
 		GamePanel.setBackground(Color.WHITE);
 		GamePanel.setLayout(new BorderLayout());
 		GamePanel.add(board, BorderLayout.CENTER);
 		
+		
+		
 		setContentPane(GamePanel);
 
 		InfoPanel = new JPanel();
-		InfoPanel.setPreferredSize(new Dimension(300, 50));
+		InfoPanel.setPreferredSize(new Dimension(0, 50));
 
 		statusbar.setFont(statusbar.getFont().deriveFont(18.0f));
 		InfoPanel.add(statusbar, BorderLayout.WEST);
@@ -84,5 +100,10 @@ public class GameView extends JFrame {
 		// TODO Auto-generated method stub
 		super.setVisible(b);
 		holdView.setVisible(b);
+		holdView.setAlwaysOnTop(true);
+		holdView.toFront();
+		nextView.setVisible(b);
+		nextView.setAlwaysOnTop(true);
+		nextView.toFront();
 	}
 }
