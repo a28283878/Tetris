@@ -20,14 +20,14 @@ public class MenuView extends JFrame{
 	JButton Quit;
 	
 	public MenuView(){
-		setSize(300,600);
+		setSize(300,550);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
 		Title = new JLabel("Tetris Game",SwingConstants.CENTER);
 		Title.setName("Tetris Game");
 		Title.setFont(Title.getFont().deriveFont(36.0f));
-		Title.setBounds(20, 5, 240, 100);
+		Title.setBounds(20, 30, 240, 100);
 		getContentPane().add(Title);
 		
 		Start = new JButton("Start");
@@ -42,7 +42,7 @@ public class MenuView extends JFrame{
 				
 			}
 		});
-		Start.setBounds(20, 140, 240, 40);
+		Start.setBounds(20, 180, 240, 40);
 		getContentPane().add(Start);
 
 		
@@ -54,7 +54,7 @@ public class MenuView extends JFrame{
 				MC.Setting();
 			}
 		});
-		Setting.setBounds(20, 240, 240, 40);
+		Setting.setBounds(20, 280, 240, 40);
 		getContentPane().add(Setting);
 
 		
@@ -65,7 +65,7 @@ public class MenuView extends JFrame{
 				System.exit(0);
 			}
 		});
-		Quit.setBounds(20, 340, 240, 40);
+		Quit.setBounds(20, 380, 240, 40);
 		getContentPane().add(Quit);
 	
 	}

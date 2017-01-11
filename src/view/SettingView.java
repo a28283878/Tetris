@@ -22,18 +22,18 @@ public class SettingView extends JFrame{
 	public GameSetting GS = new GameSetting();
 	
 	public SettingView(){
-		setSize(300,650);
+		setSize(300,550);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		
 		txtDifficulty = new JLabel("Difficulty : ");
 		txtDifficulty.setFont(txtDifficulty.getFont().deriveFont(24.0f));
-		txtDifficulty.setBounds(20, 20, 240, 30);
+		txtDifficulty.setBounds(20, 40, 240, 30);
 		getContentPane().add(txtDifficulty);	
 		
 		Difficulty = new JTextField();
 		Difficulty.setText(String.valueOf(GS.difficulty));
-		Difficulty.setBounds(20, 60, 240, 30);
+		Difficulty.setBounds(20, 80, 240, 30);
 		getContentPane().add(Difficulty);
 		
 		Send = new JButton("Send");
@@ -46,7 +46,7 @@ public class SettingView extends JFrame{
 				MC.Menu();
 			}
 		});
-		Send.setBounds(20, 470, 240, 30);
+		Send.setBounds(20, 400, 240, 30);
 		getContentPane().add(Send);
 		
 		Back = new JButton("Cancel");
@@ -57,7 +57,7 @@ public class SettingView extends JFrame{
 				MC.Menu();
 			}
 		});
-		Back.setBounds(20, 510, 240, 30);
+		Back.setBounds(20, 450, 240, 30);
 		getContentPane().add(Back);
 	}
 }

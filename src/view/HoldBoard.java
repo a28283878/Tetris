@@ -19,7 +19,7 @@ public class HoldBoard extends Board{
 			for (int i = 0; i < 4; ++i) {
 				int x = curX - curPiece.x(i);
 				int y = curY - curPiece.y(i);
-				drawSquare(g,(int) (30 + x * squareWidth()),(int) (50 + y * squareHeight()),
+				drawSquare(g,(int) (40 + x * squareWidth()),(int) (50 + y * squareHeight()),
 						curPiece.getShape());
 			}
 		}

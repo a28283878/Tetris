@@ -22,7 +22,7 @@ public class StopView extends JWindow {
 	JPanel panel = new JPanel();
 	
 	public StopView() {
-		setSize(300,150);
+		setSize(300,60);
 		setLocationRelativeTo(null);
 		Back = new JButton("Menu");
 		Back.setFont(Back.getFont().deriveFont(24.0f));
@@ -45,6 +45,7 @@ public class StopView extends JWindow {
 		});
 		panel.add(Continue);
 		add(panel);
+		
 		setVisible(true);
 	}
 }
